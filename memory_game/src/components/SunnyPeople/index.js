@@ -15,11 +15,7 @@ function Sunny(props) {
  
   
   return (
-    
-     
       <img style={styles.img} id={props.id} alt={props.name} src={props.image} onClick={()=>props.click(props.name)} />
-     
-   
   );
 }
 

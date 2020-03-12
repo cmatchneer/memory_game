@@ -9,22 +9,35 @@ class App extends Component {
   state = {
     sunny,
     score:0,
+    highscore:0,
     name:"",
     guesses:[]
-    
-
-    
   };
-  userGuess = name=>{
-    this.setState({score:this.state.score +1});
-    this.setState({name:name});
-    // let guessIds= this.state.ids.push(id)
+  theGame = (guess, compareList)=>{
+   
+
+   const compare= compareList.filter(name => name !== guess)
+   console.log("overall list "+compareList);
+   console.log("filtered list "+compare);
+   switch(compare.lenght){
+     case 0:
+    return this.setState({score:this.state.score +1});
+    case 1:
+    return this.setState({score:0});
     
-    this.setState({guesses:this.state.guesses.concat(this.state.name)});
-    console.log(this.state.guesses);
-    
-    
+     
+   }
   }
+
+  userGuess = name=>{
+    
+    this.setState({name:name});
+    const guessName= this.state.name
+    this.setState({guesses:this.state.guesses.concat(this.state.name)});
+    
+    this.theGame(guessName,this.state.guesses)
+  }
+  
 
   // removeFriend = id => {
   //   // Filter this.state.friends for friends with an id not equal to the id being removed
