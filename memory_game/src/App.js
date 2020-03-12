@@ -13,29 +13,65 @@ class App extends Component {
     name:"",
     guesses:[]
   };
-  theGame = (guess, compareList)=>{
+  // theGame = (guess, compareList)=>{
    
-
-   const compare= compareList.filter(name => name !== guess)
-   console.log("overall list "+compareList);
-   console.log("filtered list "+compare);
-   switch(compare.lenght){
-     case 0:
-    return this.setState({score:this.state.score +1});
-    case 1:
-    return this.setState({score:0});
+   
+  //   compareList.map(name =>{
+    
+    
+  //     if(guess !==name){
+  //      
+  //     }
+  //     if(guess === name){
+  //       console.log(guess);
+  //       
+  //     }
+  //   })
     
      
-   }
-  }
+  //  }
+  
 
   userGuess = name=>{
     
-    this.setState({name:name});
+    this.setState({name:name},()=>{
+      // console.log(this.state.name);
+    });
     const guessName= this.state.name
-    this.setState({guesses:this.state.guesses.concat(this.state.name)});
+    this.setState({guesses:this.state.guesses.concat(this.state.name)},()=>{
+      console.log(this.state.guesses);
+    });
+    for(let i =0;i<this.state.guesses.length;i++){
+      if(this.state.guesses[i] !== guessName){
+        
+        this.setState({score: this.state.score +1});
+      }else{ 
+        if(this.state.score > this.state.highscore){
+          const highscore = this.state.score
+          
+          return (this.setState({highscore:highscore}),
+          this.setState({score:0}),
+          this.setState({guesses:[]}))
+          }else{
+            return (
+            this.setState({score:0}),
+            this.setState({guesses:[]}))
+          }
     
-    this.theGame(guessName,this.state.guesses)
+      }
+    }
+  
+    // this.state.guesses.map(name=> {
+    //   console.log(name);
+    //   if(name === guessName){
+    //     console.log("lose");
+    //   }
+    //   if(name !== guessName){
+    //     console.log("win");
+    //   }
+     
+    // })
+    
   }
   
 
@@ -51,7 +87,7 @@ class App extends Component {
     
     return (
       <Wrapper>
-        <Title score={this.state.score}></Title>
+        <Title score={this.state.score} highscore={this.state.highscore}></Title>
         {this.state.sunny.map(sunny => (
           <Sunny
             
