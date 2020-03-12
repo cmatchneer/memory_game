@@ -11,28 +11,39 @@ class App extends Component {
     score:0,
     highscore:0,
     name:"",
-    guesses:[]
+    guesses:[],
+    display:[]
   };
-  // theGame = (guess, compareList)=>{
-   
-   
-  //   compareList.map(name =>{
-    
-    
-  //     if(guess !==name){
-  //      
-  //     }
-  //     if(guess === name){
-  //       console.log(guess);
-  //       
-  //     }
-  //   })
-    
+ pageReset = ()=>{
+  //  const display = this.state.sunny.sort(()=> Math.random()).find(() => true);
+   const array =[];
+   const index=13
+   for(let i =0;i<index;i++){
      
-  //  }
-  
+    const randomNumber = Math.floor(Math.random()*this.state.sunny.length);
+    array.push(this.state.sunny[randomNumber])
+    console.log(array);
+    for(let j =0;j<array.length-1;j++){
+      
+      if(this.state.sunny[randomNumber] === array[j]){
+        
+        array.pop();
+      }
+      if(this.state.sunny[randomNumber !== array[j]]){
+         
+        this.state.sunny.splice(randomNumber,1);
+        
+      }
+    }
+    
+    this.setState({sunny:array});
+   }
+  //  console.log(array);
+  //  this.setState({sunny:array})
+ }
 
   userGuess = name=>{
+    this.pageReset();
     
     this.setState({name:name},()=>{
       // console.log(this.state.name);
@@ -60,18 +71,6 @@ class App extends Component {
     
       }
     }
-  
-    // this.state.guesses.map(name=> {
-    //   console.log(name);
-    //   if(name === guessName){
-    //     console.log("lose");
-    //   }
-    //   if(name !== guessName){
-    //     console.log("win");
-    //   }
-     
-    // })
-    
   }
   
 
