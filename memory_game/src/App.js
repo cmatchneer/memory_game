@@ -9,13 +9,19 @@ class App extends Component {
   state = {
     sunny,
     score:0,
+    name:"",
+    guesses:[]
     
 
     
   };
-  userGuess = id=>{
+  userGuess = name=>{
     this.setState({score:this.state.score +1});
-    console.log(id)
+    this.setState({name:name});
+    // let guessIds= this.state.ids.push(id)
+    
+    this.setState({guesses:this.state.guesses.concat(this.state.name)});
+    console.log(this.state.guesses);
     
     
   }
