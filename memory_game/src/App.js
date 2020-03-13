@@ -14,36 +14,16 @@ class App extends Component {
     guesses:[],
     display:[]
   };
- pageReset = ()=>{
-  //  const display = this.state.sunny.sort(()=> Math.random()).find(() => true);
-   const array =[];
-   const index=13
-   for(let i =0;i<index;i++){
-     
-    const randomNumber = Math.floor(Math.random()*this.state.sunny.length);
-    array.push(this.state.sunny[randomNumber])
-    console.log(array);
-    for(let j =0;j<array.length-1;j++){
-      
-      if(this.state.sunny[randomNumber] === array[j]){
-        
-        array.pop();
-      }
-      if(this.state.sunny[randomNumber !== array[j]]){
-         
-        this.state.sunny.splice(randomNumber,1);
-        
-      }
+   shuffle= a => {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
     }
-    
-    this.setState({sunny:array});
-   }
-  //  console.log(array);
-  //  this.setState({sunny:array})
- }
+    this.setState({sunny:a});
+}
 
   userGuess = name=>{
-    this.pageReset();
+    this.shuffle(this.state.sunny);
     
     this.setState({name:name},()=>{
       // console.log(this.state.name);
