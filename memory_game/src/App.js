@@ -22,7 +22,9 @@ class App extends Component {
     this.setState({sunny:a});
 }
 
+
   userGuess = name=>{
+
     this.shuffle(this.state.sunny);
     
     this.setState({name:name},()=>{
@@ -51,6 +53,7 @@ class App extends Component {
     
       }
     }
+    
   }
   
 
