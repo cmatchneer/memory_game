@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import Sunny from "./components/SunnyPeople";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
+import WinningButton from "./components/WinningButton";
 import sunny from "./sunny.json";
+import winning from "./assets/sounds/golden_god.m4a"
 
 
 class App extends Component {
@@ -13,7 +15,7 @@ class App extends Component {
     highscore:0,
     name:"",
     guesses:[],
-    display:[]
+    showScore:true,
   };
    shuffle= a => {
     for (let i = a.length - 1; i > 0; i--) {
@@ -22,31 +24,23 @@ class App extends Component {
     }
     this.setState({sunny:a});
 }
+winning = () =>{
+  console.log("test");
+  this.setState({showScore:true});
+  this.setState({score:0});
+  this.setState({highscore:0})
+  this.setState({name:""})
+  this.setState({guesses:[]});
+  
 
-playAudio =()=> {
-  const audioPromise = this.audio.play()
-  if (audioPromise !== undefined) {
-    audioPromise
-      .then(_ => {
-        // autoplay started
-        this.audio.play();
-      })
-      .catch(err => {
-        // catch dom exception
-        console.info(err)
-      })
-  }
 }
+
   userGuess = name=>{
-    console.log(name)
-    switch(name){
-      case"dennis":
-      this.audio = new Audio("./assets/sounds/Dennis.m4a");
-      this.audio.load()
-      this.playAudio();
-      break;
+    if(this.state.score ===1){
+      this.setState({showScore:false})
       
     }
+ 
     this.shuffle(this.state.sunny);
     
     this.setState({name:name},()=>{
@@ -91,7 +85,8 @@ playAudio =()=> {
     
     return (
       <Wrapper>
-        <Title score={this.state.score} highscore={this.state.highscore}></Title>
+        {this.state.showScore?<Title score={this.state.score} highscore={this.state.highscore}></Title>:<WinningButton winning={this.winning}></WinningButton>}
+
         {this.state.sunny.map(sunny => (
           <Sunny
             
