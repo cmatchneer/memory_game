@@ -4,6 +4,7 @@ import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import sunny from "./sunny.json";
 
+
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
@@ -22,9 +23,30 @@ class App extends Component {
     this.setState({sunny:a});
 }
 
-
+playAudio =()=> {
+  const audioPromise = this.audio.play()
+  if (audioPromise !== undefined) {
+    audioPromise
+      .then(_ => {
+        // autoplay started
+        this.audio.play();
+      })
+      .catch(err => {
+        // catch dom exception
+        console.info(err)
+      })
+  }
+}
   userGuess = name=>{
-
+    console.log(name)
+    switch(name){
+      case"dennis":
+      this.audio = new Audio("./assets/sounds/Dennis.m4a");
+      this.audio.load()
+      this.playAudio();
+      break;
+      
+    }
     this.shuffle(this.state.sunny);
     
     this.setState({name:name},()=>{
