@@ -8,3 +8,12 @@ html, body, #root {
   margin: 0;
   height: 100%;
 }
+img {
+  width: "200px";
+  height: "200px";
+  float: "left";
+  margin:"25px";
+ border:"4px inset gold";
+ cursor:"pointer"
+}
+

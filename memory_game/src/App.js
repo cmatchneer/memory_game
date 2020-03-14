@@ -3,9 +3,16 @@ import Sunny from "./components/SunnyPeople";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import WinningButton from "./components/WinningButton";
+import Sign from "./components/Sign";
 import sunny from "./sunny.json";
+import background from "../src/assets/images/background.jpg"
 import winning from "./assets/sounds/golden_god.m4a"
-
+const styles ={
+  position:{
+    position:"relative",
+    backgroundImage: `url("${background}")`
+  }
+}
 
 class App extends Component {
   // Setting this.state.friends to the friends json array
@@ -33,6 +40,9 @@ winning = () =>{
   this.setState({guesses:[]});
   
 
+}
+componentDidMount = ()=>{
+  this.shuffle(this.state.sunny);
 }
 
   userGuess = name=>{
@@ -84,9 +94,11 @@ winning = () =>{
   render() {
     
     return (
-      <Wrapper>
-        {this.state.showScore?<Title score={this.state.score} highscore={this.state.highscore}></Title>:<WinningButton winning={this.winning}></WinningButton>}
-
+      <Wrapper styles ={styles.position}>
+        
+        <Sign> </Sign>
+       {this.state.showScore?<Title score={this.state.score} highscore={this.state.highscore}></Title>:<WinningButton winning={this.winning}></WinningButton>}
+        
         {this.state.sunny.map(sunny => (
           <Sunny
             

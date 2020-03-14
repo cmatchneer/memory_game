@@ -6,9 +6,11 @@ const styles ={
     width: "200px",
     height: "200px",
     float: "left",
-    margin:"25px"
-    
+    margin:"25px",
+    border:"4px inset gold",
+    cursor:"pointer"
   }
+  
 }
 
 function Sunny(props) {
