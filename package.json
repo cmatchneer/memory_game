@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/cmatchneer/memory_game/issues"
   },
-  "homepage": "https://github.com/cmatchneer/memory_game#readme"
+  "homepage": "https://github.com/cmatchneer/memory_game#readme",
+  "dependencies": {
+    "react-sound": "^1.2.0"
+  }
 }

@@ -2,71 +2,84 @@
     {
         "id": 1,
         "name":"dennis",
-        "image":"https://www.oxygen.com/sites/oxygen/files/2019-09/dennis-its-always-sunny-fx.jpg"
-
+        "image":"https://www.oxygen.com/sites/oxygen/files/2019-09/dennis-its-always-sunny-fx.jpg",
+        "clicked":"false"
     },
     {
         "id": 2,
         "name":"mac",
-        "image":"https://upload.wikimedia.org/wikipedia/en/thumb/d/dd/Mac_McDonald_%28cropped%29.png/220px-Mac_McDonald_%28cropped%29.png"
+        "image":"https://upload.wikimedia.org/wikipedia/en/thumb/d/dd/Mac_McDonald_%28cropped%29.png/220px-Mac_McDonald_%28cropped%29.png",
+        "clicked":"false"
     },
     {    "id": 3,
         "name":"charlie",
-        "image":"https://upload.wikimedia.org/wikipedia/en/thumb/0/0f/Charlie_Kelly.png/220px-Charlie_Kelly.png"
+        "image":"https://upload.wikimedia.org/wikipedia/en/thumb/0/0f/Charlie_Kelly.png/220px-Charlie_Kelly.png",
+        "clicked":"false"
     },
     {
         "id": 4,
         "name":"dee",
-        "image":"https://cdn3.whatculture.com/images/2019/02/f025f7792c5893f5-600x338.png"
+        "image":"https://cdn3.whatculture.com/images/2019/02/f025f7792c5893f5-600x338.png",
+        "clicked":"false"
     },
     {
         "id": 5,
         "name":"frank",
-        "image":"https://images.squarespace-cdn.com/content/v1/5459ab36e4b026480c006f96/1456805816535-NXH512QFS7QX73THGA2X/ke17ZwdGBToddI8pDm48kCdjkP1v6n4XgU7Kca2IiLtZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIXDhJiMcCUXLnSSjCl-t7E2tWD3AOK6Xn6Yo3mmXeA6c/Its-Always-Sunny-Frank-Retires.png"
+        "image":"https://images.squarespace-cdn.com/content/v1/5459ab36e4b026480c006f96/1456805816535-NXH512QFS7QX73THGA2X/ke17ZwdGBToddI8pDm48kCdjkP1v6n4XgU7Kca2IiLtZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIXDhJiMcCUXLnSSjCl-t7E2tWD3AOK6Xn6Yo3mmXeA6c/Its-Always-Sunny-Frank-Retires.png",
+        "clicked":"false"
     },
     {
         "id": 6,
         "name":"artimus",
-        "image":"https://i.redd.it/68sq5pzexw001.png"
+        "image":"https://i.redd.it/68sq5pzexw001.png",
+        "clicked":"false"
     },
     {
         "id": 7,
         "name":"bill",
-        "image":"https://vignette.wikia.nocookie.net/itsalwayssunny/images/a/af/Bill_Ponderosa.jpg/revision/latest/top-crop/width/360/height/450?cb=20111105214828"
+        "image":"https://vignette.wikia.nocookie.net/itsalwayssunny/images/a/af/Bill_Ponderosa.jpg/revision/latest/top-crop/width/360/height/450?cb=20111105214828",
+        "clicked":"false"
     },
     {
         "id": 8,
         "name":"cricket",
-        "image":"https://uproxx.com/wp-content/uploads/2017/06/cricket-always-sunny.jpg?w=650"
+        "image":"https://uproxx.com/wp-content/uploads/2017/06/cricket-always-sunny.jpg?w=650",
+        "clicked":"false"
     },
     {
         "id": 9,
         "name":"liam",
-        "image":"https://vignette.wikia.nocookie.net/itsalwayssunny/images/8/82/Liam_McPoyle.jpg/revision/latest?cb=20141103023841"
+        "image":"https://vignette.wikia.nocookie.net/itsalwayssunny/images/8/82/Liam_McPoyle.jpg/revision/latest?cb=20141103023841",
+        "clicked":"false"
     },
     {
         "id": 10,
         "name":"Margaret",
-        "image":"https://vignette.wikia.nocookie.net/itsalwayssunny/images/b/b7/Margaret_McPoyle.jpg/revision/latest?cb=20111126173924"
+        "image":"https://vignette.wikia.nocookie.net/itsalwayssunny/images/b/b7/Margaret_McPoyle.jpg/revision/latest?cb=20111126173924",
+        "clicked":"false"
     },
     {
         "id": 11,
         "name":"maureen",
-        "image":"https://vignette.wikia.nocookie.net/itsalwayssunny/images/8/89/Mac_Kills_His_Dad_9.jpg/revision/latest/top-crop/width/360/height/450?cb=20150301230534"
+        "image":"https://vignette.wikia.nocookie.net/itsalwayssunny/images/8/89/Mac_Kills_His_Dad_9.jpg/revision/latest/top-crop/width/360/height/450?cb=20150301230534",
+        "clicked":"false"
     },
     {
         "id": 12,
         "name":"ryan",
-        "image":"https://static.tvmaze.com/uploads/images/medium_portrait/204/511592.jpg"
+        "image":"https://static.tvmaze.com/uploads/images/medium_portrait/204/511592.jpg",
+        "clicked":"false"
     },
     {
         "id": 13,
         "name":"waitress",
-        "image":"https://static1.cbrimages.com/wp-content/uploads/spinoff/2015/09/always-sunny-waitress2.jpg"
+        "image":"https://static1.cbrimages.com/wp-content/uploads/spinoff/2015/09/always-sunny-waitress2.jpg",
+        "clicked":"false"
     },
     {
         "id": 14,
         "name":"jackie",
-        "image":"https://i.redd.it/ra5g75k6u2111.jpg"
+        "image":"https://i.redd.it/ra5g75k6u2111.jpg",
+        "clicked":"false"
     }
 ]
