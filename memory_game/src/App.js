@@ -31,7 +31,7 @@ class App extends Component {
     this.setState({sunny:a});
 }
 winning = (sunny) =>{
-  // this.shuffle(sunny);
+  this.shuffle(sunny);
   this.myRef = React.createRef();
   console.log("test");
   this.setState({showScore:true});
@@ -55,44 +55,49 @@ componentDidMount = ()=>{
   this.shuffle(this.state.sunny);
 }
 handleCorrectGuess(sunny){
-  this.setState({score: this.state.score +1})
+  if(this.state.highscore === 1){
+    this.winning(sunny)
+  }else{
+  this.setState({score:this.state.score +1})
   this.shuffle(sunny)
+  }
 }
 handleIncorrectGuess(sunny){
-  if(this.state.highscore =1){
-    this.winning(sunny);
-  }else{
+  if(this.state.highscore< this.state.score){
     this.setState({highscore:this.state.score});
     this.setState({score:0});
     this.shuffle(sunny);
+  }else{
+    this.setState({score:0});
+    this.shuffle(sunny);
   }
+    
+  
 }
 
 handleItemClick = id => {
+  // console.log(id);
   
   let guessedCorrectly = false;
   const newSunny = this.state.sunny.map(item => {
     const newItem = { ...item };
+  
     if (newItem.id === id) {
+      console.log(newItem.clicked)
       if (!newItem.clicked) {
         newItem.clicked = true;
         guessedCorrectly = true;
+        
       }
     }
     return newItem;
   });
+  // console.log(guessedCorrectly)
   guessedCorrectly
     ? this.handleCorrectGuess(newSunny)
     : this.handleIncorrectGuess(newSunny);
 };
-  
 
-  // removeFriend = id => {
-  //   // Filter this.state.friends for friends with an id not equal to the id being removed
-  //   const friends = this.state.friends.filter(friend => friend.id !== id);
-  //   // Set this.state.friends equal to the new friends array
-  //   this.setState({ friends });
-  // };
 
 
   render() {
@@ -110,7 +115,7 @@ handleItemClick = id => {
             key={sunny.id}
             name={sunny.name}
             image={sunny.image}
-            click ={this.handleItemClick(sunny.id)}
+            click ={this.handleItemClick}
            
           />
         ))}
