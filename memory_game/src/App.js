@@ -5,12 +5,12 @@ import Title from "./components/Title";
 import WinningButton from "./components/WinningButton";
 import Sign from "./components/Sign";
 import sunny from "./sunny.json";
-import background from "../src/assets/images/background.jpg"
+
 import winning from "./assets/sounds/golden_god.m4a"
 const styles ={
   position:{
     position:"relative",
-    backgroundImage: `url("${background}")`
+    
   }
 }
 
@@ -32,12 +32,17 @@ class App extends Component {
     this.setState({sunny:a});
 }
 winning = () =>{
+  this.myRef = React.createRef();
   console.log("test");
   this.setState({showScore:true});
   this.setState({score:0});
   this.setState({highscore:0})
   this.setState({name:""})
-  this.setState({guesses:[]});
+  this.setState({guesses:[]})
+  return (
+    <audio ref={this.myRef} src={winning} autoPlay/>
+   )
+  ;
   
 
 }
@@ -49,7 +54,7 @@ componentDidMount = ()=>{
     if(this.state.score ===1){
       this.setState({showScore:false})
       
-    }
+    }else{
  
     this.shuffle(this.state.sunny);
     
@@ -79,6 +84,7 @@ componentDidMount = ()=>{
     
       }
     }
+  }
     
   }
   
