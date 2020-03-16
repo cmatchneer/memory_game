@@ -33,21 +33,22 @@ class App extends Component {
 winning = (sunny) =>{
   this.shuffle(sunny);
   this.myRef = React.createRef();
-  console.log("test");
-  this.setState({showScore:true});
+  
+  this.setState({showScore:false});
   this.setState({score:0});
   this.setState({highscore:0})
+  console.log(this.state.showScore);
   
-  return (
-   <Sound
-      url={winning}
-      playStatus={Sound.status.PLAYING}
-      onLoading={this.handleSongLoading}
-      onPlaying={this.handleSongPlaying}
-      onFinishedPlaying={this.handleSongFinishedPlaying}  
-    />
-   )
-  ;
+  // return (
+  //  <Sound
+  //     url={winning}
+  //     playStatus={Sound.status.PLAYING}
+  //     onLoading={this.handleSongLoading}
+  //     onPlaying={this.handleSongPlaying}
+  //     onFinishedPlaying={this.handleSongFinishedPlaying}  
+  //   />
+  //  );
+  
   
 
 }
@@ -55,7 +56,7 @@ componentDidMount = ()=>{
   this.shuffle(this.state.sunny);
 }
 handleCorrectGuess(sunny){
-  if(this.state.highscore === 1){
+  if(this.state.highscore >= 1){
     this.winning(sunny)
   }else{
   this.setState({score:this.state.score +1})
@@ -83,7 +84,7 @@ handleItemClick = id => {
     const newItem = { ...item };
   
     if (newItem.id === id) {
-      console.log(newItem.clicked)
+      
       if (!newItem.clicked) {
         newItem.clicked = true;
         guessedCorrectly = true;
