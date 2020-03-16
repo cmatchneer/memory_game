@@ -30,14 +30,14 @@ class App extends Component {
     }
     this.setState({sunny:a});
 }
-winning = (sunny) =>{
+winning = () =>{
   // this.shuffle(sunny);
   // this.myRef = React.createRef();
   
   this.setState({showScore:true});
   this.setState({score:0});
   this.setState({highscore:0})
-  console.log(this.state.showScore);
+  
   this.componentDidMount();
   // return (
   //  <Sound
@@ -51,11 +51,19 @@ winning = (sunny) =>{
 }
 componentDidMount = ()=>{
   this.shuffle(this.state.sunny);
+  console.log("used");
 }
 componentDidUpdate = () => {
-  if(this.state.highscore >= 1){
-    this.setState({showScore:false});
+  console.log(this.state.showScore)
+  if(this.state.highscore === 14 && this.state.showScore === true){
+    this.buttonShow();
+    
+    
   }
+}
+buttonShow = ()=>{
+  console.log("test");
+  this.setState({showScore:false});
 }
 handleCorrectGuess(sunny){
  
@@ -104,7 +112,7 @@ handleItemClick = id => {
         
         <Sign> </Sign>
         {this.state.showScore?<Title score={this.state.score} highscore={this.state.highscore}></Title>:<WinningButton winning={this.winning}></WinningButton>}
-        
+        {/* {console.log(this.state.showScore)} */}
         {this.state.sunny.map(sunny => (
           <Sunny
             id={sunny.id}
