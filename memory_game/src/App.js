@@ -31,14 +31,14 @@ class App extends Component {
     this.setState({sunny:a});
 }
 winning = (sunny) =>{
-  this.shuffle(sunny);
-  this.myRef = React.createRef();
+  // this.shuffle(sunny);
+  // this.myRef = React.createRef();
   
   this.setState({showScore:false});
   this.setState({score:0});
   this.setState({highscore:0})
   console.log(this.state.showScore);
-  
+  this.componentDidMount();
   // return (
   //  <Sound
   //     url={winning}
@@ -48,9 +48,6 @@ winning = (sunny) =>{
   //     onFinishedPlaying={this.handleSongFinishedPlaying}  
   //   />
   //  );
-  
-  
-
 }
 componentDidMount = ()=>{
   this.shuffle(this.state.sunny);
@@ -71,17 +68,13 @@ handleIncorrectGuess(sunny){
   }else{
     this.setState({score:0});
     this.shuffle(sunny);
-  }
-    
-  
+  } 
 }
 
-handleItemClick = id => {
-  // console.log(id);
-  
+handleItemClick = id => {  
   let guessedCorrectly = false;
   const newSunny = this.state.sunny.map(item => {
-    const newItem = { ...item };
+  const newItem = { ...item };
   
     if (newItem.id === id) {
       
@@ -111,13 +104,11 @@ handleItemClick = id => {
         
         {this.state.sunny.map(sunny => (
           <Sunny
-            
             id={sunny.id}
             key={sunny.id}
             name={sunny.name}
             image={sunny.image}
             click ={this.handleItemClick}
-           
           />
         ))}
       </Wrapper>
