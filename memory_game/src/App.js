@@ -52,14 +52,16 @@ winning = (sunny) =>{
 componentDidMount = ()=>{
   this.shuffle(this.state.sunny);
 }
-handleCorrectGuess(sunny){
+componentDidUpdate = () => {
   if(this.state.highscore >= 1){
     this.setState({showScore:false});
-    // this.winning(sunny)
-  }else{
+  }
+}
+handleCorrectGuess(sunny){
+ 
   this.setState({score:this.state.score +1})
   this.shuffle(sunny)
-  }
+  
 }
 handleIncorrectGuess(sunny){
   if(this.state.highscore< this.state.score){
