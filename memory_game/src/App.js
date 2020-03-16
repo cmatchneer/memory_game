@@ -34,7 +34,7 @@ winning = (sunny) =>{
   // this.shuffle(sunny);
   // this.myRef = React.createRef();
   
-  this.setState({showScore:false});
+  this.setState({showScore:true});
   this.setState({score:0});
   this.setState({highscore:0})
   console.log(this.state.showScore);
@@ -54,7 +54,8 @@ componentDidMount = ()=>{
 }
 handleCorrectGuess(sunny){
   if(this.state.highscore >= 1){
-    this.winning(sunny)
+    this.setState({showScore:false});
+    // this.winning(sunny)
   }else{
   this.setState({score:this.state.score +1})
   this.shuffle(sunny)
