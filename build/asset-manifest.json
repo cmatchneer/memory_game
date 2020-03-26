@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.565cc41f.chunk.css",
+    "main.js": "/static/js/main.fb75aeda.chunk.js",
+    "main.js.map": "/static/js/main.fb75aeda.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.609bff04.js",
+    "runtime-main.js.map": "/static/js/runtime-main.609bff04.js.map",
+    "static/js/2.b74ac324.chunk.js": "/static/js/2.b74ac324.chunk.js",
+    "static/js/2.b74ac324.chunk.js.map": "/static/js/2.b74ac324.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.369d6013c0cc50b2c23bb6ba09f7e68b.js": "/precache-manifest.369d6013c0cc50b2c23bb6ba09f7e68b.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.565cc41f.chunk.css.map": "/static/css/main.565cc41f.chunk.css.map",
+    "static/js/2.b74ac324.chunk.js.LICENSE.txt": "/static/js/2.b74ac324.chunk.js.LICENSE.txt",
+    "static/media/back.jpg": "/static/media/back.a9a6fd05.jpg",
+    "static/media/golden_god.m4a": "/static/media/golden_god.661ebda4.m4a",
+    "static/media/sign.jpg": "/static/media/sign.5167330d.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.609bff04.js",
+    "static/js/2.b74ac324.chunk.js",
+    "static/css/main.565cc41f.chunk.css",
+    "static/js/main.fb75aeda.chunk.js"
+  ]
+}
