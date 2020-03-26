@@ -4,9 +4,7 @@ import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import WinningButton from "./components/WinningButton";
 import Sign from "./components/Sign";
-import Sound from "react-sound"
 import sunny from "./sunny.json";
-
 import winning from "./assets/sounds/golden_god.m4a"
 const styles ={
   position:{
@@ -31,34 +29,26 @@ class App extends Component {
     this.setState({sunny:a});
 }
 winning = () =>{
-  // this.shuffle(sunny);
-  // this.myRef = React.createRef();
+
   
   this.setState({showScore:true});
   this.setState({score:0});
   this.setState({highscore:0})
   
   this.componentDidMount();
-  // return (
-  //  <Sound
-  //     url={winning}
-  //     playStatus={Sound.status.PLAYING}
-  //     onLoading={this.handleSongLoading}
-  //     onPlaying={this.handleSongPlaying}
-  //     onFinishedPlaying={this.handleSongFinishedPlaying}  
-  //   />
-  //  );
+  let audio = new Audio(winning)
+    audio.play()
 }
+
 componentDidMount = ()=>{
   this.shuffle(this.state.sunny);
   console.log("used");
 }
+
 componentDidUpdate = () => {
   console.log(this.state.showScore)
   if(this.state.highscore === 14 && this.state.showScore === true){
     this.buttonShow();
-    
-    
   }
 }
 buttonShow = ()=>{
@@ -66,10 +56,8 @@ buttonShow = ()=>{
   this.setState({showScore:false});
 }
 handleCorrectGuess(sunny){
- 
   this.setState({score:this.state.score +1})
   this.shuffle(sunny)
-  
 }
 handleIncorrectGuess(sunny){
   if(this.state.highscore< this.state.score){
@@ -86,9 +74,7 @@ handleItemClick = id => {
   let guessedCorrectly = false;
   const newSunny = this.state.sunny.map(item => {
   const newItem = { ...item };
-  
     if (newItem.id === id) {
-      
       if (!newItem.clicked) {
         newItem.clicked = true;
         guessedCorrectly = true;
@@ -112,7 +98,6 @@ handleItemClick = id => {
         
         <Sign> </Sign>
         {this.state.showScore?<Title score={this.state.score} highscore={this.state.highscore}></Title>:<WinningButton winning={this.winning}></WinningButton>}
-        {/* {console.log(this.state.showScore)} */}
         {this.state.sunny.map(sunny => (
           <Sunny
             id={sunny.id}
