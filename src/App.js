@@ -46,10 +46,11 @@ componentDidMount = ()=>{
 }
 
 componentDidUpdate = () => {
-  console.log(this.state.showScore)
-  if(this.state.highscore === 14 && this.state.showScore === true){
-    this.buttonShow();
-  }
+  console.log(this.state.sunny);
+  // console.log(sunny);
+  // if(this.state.highscore === 14 && this.state.showScore === true){
+  //   this.buttonShow();
+  // }
 }
 buttonShow = ()=>{
   console.log("test");
@@ -57,9 +58,17 @@ buttonShow = ()=>{
 }
 handleCorrectGuess(sunny){
   this.setState({score:this.state.score +1})
+  if(this.state.highscore === 14 && this.state.showScore === true){
+    this.buttonShow();
+  }else{
   this.shuffle(sunny)
+  }
 }
-handleIncorrectGuess(sunny){
+// endGame(sunny){
+//   console.log(sunny);
+//   console.log(this.state.sunny)
+// }
+handleIncorrectGuess(){
   if(this.state.highscore< this.state.score){
     this.setState({highscore:this.state.score});
     this.setState({score:0});
@@ -86,7 +95,7 @@ handleItemClick = id => {
   // console.log(guessedCorrectly)
   guessedCorrectly
     ? this.handleCorrectGuess(newSunny)
-    : this.handleIncorrectGuess(newSunny);
+    : this.handleIncorrectGuess();
 };
 
 
