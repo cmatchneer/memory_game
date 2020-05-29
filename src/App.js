@@ -39,31 +39,151 @@ winning = () =>{
 losingAudio =(char)=>{
   switch(char){
     case"dennis":
-    let dennis = require("./assets/sounds/Dennis.m4a")
-    let audio = new Audio(dennis)
-      audio.play()
+      let dennis = require("./assets/sounds/tools.m4a")
+      let audioDennis = new Audio(dennis)
+      audioDennis.play()
       break;
-      
+    case "charlie":
+      let charlie = require("./assets/sounds/charlie-lose.m4a");
+      let audioCharlie = new Audio(charlie)
+      audioCharlie.play()
+      break;
+    case "mac":
+      let mac =require("./assets/sounds/mac-lose.m4a");
+      let audioMac= new Audio(mac)
+      audioMac.play()
+      break;
+    case "dee":
+      let dee= require("./assets/sounds/dee-lose.m4a")
+      let audioDee = new Audio(dee);
+      audioDee.play();
+      break;
+    case "frank":
+      let frank = require("./assets/sounds/frank-lose.m4a");
+      let audioFrank = new Audio(frank);
+      audioFrank.play();
+      break;
+    case "artimus":
+     let artimus = require("./assets/sounds/artimus-lose.m4a")
+     let audioArtimus = new Audio(artimus);
+     audioArtimus.play();
+     break;
+    case "bill":
+      let bill = require("./assets/sounds/bill-lose.m4a");
+      let audioBill = new Audio(bill);
+      audioBill.play();
+      break;
+    case "cricket":
+      let cricket = require("./assets/sounds/cricket-lose.m4a");
+      let audioCricket = new Audio(cricket);
+      audioCricket.play();
+      break;
+    case "liam":
+      let liam = require("./assets/sounds/liam-lose.m4a")
+      let audioLiam = new Audio(liam);
+      audioLiam.play();
+      break;
+    case "ryan":
+      let ryan = require("./assets/sounds/ryan-lose.m4a");
+      let audioRyan = new Audio(ryan);
+      audioRyan.play();
+      break;
+    case "margaret":
+      let margaret= require("./assets/sounds/margaret.m4a");
+      let audioMargaret = new Audio(margaret);
+      audioMargaret.play();
+      break;
+    case "maureen":
+      let maureen = require("./assets/sounds/maureen-lose.m4a");
+      let audioMaureen = new Audio(maureen);
+      audioMaureen.play();
+      break;
+    case "waitress":
+      let waitress = require("./assets/sounds/waitress-lose.m4a")
+      let audioWaitress = new Audio(waitress);
+      audioWaitress.play();
+      break;   
   }
 }
 correctAudio =(char)=>{
   switch(char){
     case"dennis":
-    let dennis = require("./assets/sounds/golden_god.m4a")
-    let audio = new Audio(dennis)
-      audio.play()
+      let dennis = require("./assets/sounds/Dennis.m4a")
+      let audioDennis = new Audio(dennis)
+      audioDennis.play()
+      break;
+    case "charlie":
+      let charlie = require("./assets/sounds/charlie-win.m4a");
+      let audioCharlie = new Audio(charlie)
+      audioCharlie.play()
+      break;
+    case "mac":
+      let mac =require("./assets/sounds/mac-win.m4a");
+      let audioMac= new Audio(mac)
+      audioMac.play()
+      break;
+    case "dee":
+      let dee= require("./assets/sounds/dee-win.m4a")
+      let audioDee = new Audio(dee);
+      audioDee.play();
+      break;
+    case "frank":
+      let frank = require("./assets/sounds/frank-win.m4a");
+      let audioFrank = new Audio(frank);
+      audioFrank.play();
+      break;
+    case "artimus":
+      let artimus = require("./assets/sounds/artimus-win.m4a")
+      let audioArtimus = new Audio(artimus);
+      audioArtimus.play();
+      break;
+    case "bill":
+      let bill = require("./assets/sounds/bill-win.m4a");
+      let audioBill = new Audio(bill);
+      audioBill.play();
+      break;
+    case "cricket":
+      let cricket = require("./assets/sounds/cricket-win.m4a");
+      let audioCricket = new Audio(cricket);
+      audioCricket.play();
+      break;
+    case "liam":
+      let liam = require("./assets/sounds/liam-win.m4a")
+      let audioLiam = new Audio(liam);
+      audioLiam.play();
+      break;
+    case "ryan":
+      let ryan = require("./assets/sounds/ryan-win.m4a");
+      let audioRyan = new Audio(ryan);
+      audioRyan.play();
+      break;
+    case "margaret":
+      let margaret= require("./assets/sounds/margaret.m4a");
+      let audioMargaret = new Audio(margaret);
+      audioMargaret.play();
+      break;
+    case "maureen":
+      let maureen = require("./assets/sounds/maureen-win.m4a");
+      let audioMaureen = new Audio(maureen);
+      audioMaureen.play();
+      break;
+    case "waitress":
+      let waitress = require("./assets/sounds/waitress-win.m4a")
+      let audioWaitress = new Audio(waitress);
+      audioWaitress.play();
       break;
   }
 }
 componentDidMount = ()=>{
   // console.log(this.sunny)
   console.log("used");
+  this.shuffle(sunny)
 }
 
 componentDidUpdate = () => {
 
   
-  if(this.state.score === 14 && this.state.showScore === true){
+  if(this.state.score === 13 && this.state.showScore === true){
 
     this.buttonShow();
   }
@@ -106,7 +226,6 @@ handleItemClick = id => {
     }
     return newItem;
   });
-  // console.log(guessedCorrectly)
   guessedCorrectly
     ? this.handleCorrectGuess(newSunny)
     : this.handleIncorrectGuess(newSunny.name);

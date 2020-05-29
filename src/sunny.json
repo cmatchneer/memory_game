@@ -54,7 +54,7 @@
     },
     {
         "id": 10,
-        "name":"Margaret",
+        "name":"margaret",
         "image":"https://vignette.wikia.nocookie.net/itsalwayssunny/images/b/b7/Margaret_McPoyle.jpg/revision/latest?cb=20111126173924",
         "clicked":false
     },
@@ -75,11 +75,6 @@
         "name":"waitress",
         "image":"https://static1.cbrimages.com/wp-content/uploads/spinoff/2015/09/always-sunny-waitress2.jpg",
         "clicked":false
-    },
-    {
-        "id": 14,
-        "name":"jackie",
-        "image":"https://i.redd.it/ra5g75k6u2111.jpg",
-        "clicked":false
     }
+
 ]
