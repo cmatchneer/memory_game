@@ -21,9 +21,18 @@ class Sunny extends Component{
     //   name:"holder"
     // };
   }
-
+// audio = clicked =>{
+//   if(clicked){
+//     let audio = new Audio(this.props.losingAudio)
+//     audio.play()
+//   }else{
+//     let audio = new Audio(this.props.winningAudio)
+//     audio.play()
+//   }
+// }
  
   render(){
+    // console.log(this.props)
   return <img style={styles.img} id={this.props.id} alt={this.props.name} src={this.props.image} onClick={()=>this.click(this.props.id)} />
   }
 }

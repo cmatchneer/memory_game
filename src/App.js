@@ -36,19 +36,32 @@ winning = () =>{
   let audio = new Audio(winning)
     audio.play()
 }
-getImage =(char)=>{
+losingAudio =(char)=>{
   switch(char){
     case"dennis":
-      return require("./assets/images/dennis.jpg")
+    let dennis = require("./assets/sounds/Dennis.m4a")
+    let audio = new Audio(dennis)
+      audio.play()
+      break;
+      
+  }
+}
+correctAudio =(char)=>{
+  switch(char){
+    case"dennis":
+    let dennis = require("./assets/sounds/golden_god.m4a")
+    let audio = new Audio(dennis)
+      audio.play()
       break;
   }
 }
 componentDidMount = ()=>{
-  this.shuffle(this.state.sunny);
+  // console.log(this.sunny)
   console.log("used");
 }
 
 componentDidUpdate = () => {
+
   
   if(this.state.score === 14 && this.state.showScore === true){
 
@@ -61,12 +74,11 @@ buttonShow = ()=>{
   this.setState({showScore:false});
 }
 handleCorrectGuess(sunny){
+  console.log(sunny.id);
   this.setState({score:this.state.score +1})
-  
   this.shuffle(sunny)
-  
 }
-handleIncorrectGuess(){
+handleIncorrectGuess(name){
   if(this.state.highscore< this.state.score){
     this.setState({highscore:this.state.score});
     this.setState({score:0});
@@ -81,11 +93,15 @@ handleItemClick = id => {
   let guessedCorrectly = false;
   const newSunny = this.state.sunny.map(item => {
   const newItem = { ...item };
+  console.log(newItem.name);
     if (newItem.id === id) {
       if (!newItem.clicked) {
         newItem.clicked = true;
         guessedCorrectly = true;
+        this.correctAudio(newItem.name)
         
+      }else{
+        this.losingAudio(newItem.name)
       }
     }
     return newItem;
@@ -93,7 +109,7 @@ handleItemClick = id => {
   // console.log(guessedCorrectly)
   guessedCorrectly
     ? this.handleCorrectGuess(newSunny)
-    : this.handleIncorrectGuess();
+    : this.handleIncorrectGuess(newSunny.name);
 };
 
 
@@ -110,7 +126,10 @@ handleItemClick = id => {
             id={sunny.id}
             key={sunny.id}
             name={sunny.name}
-            image={this.getImage(sunny.name)}
+            image={sunny.image}
+            // losingAudio={this.losingAudio(sunny.name)}
+            // winningAudio={this.winningAudio(sunny.name)}
+            guessed={(sunny.clicked)}
             click ={this.handleItemClick}
           />
         ))}
