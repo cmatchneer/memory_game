@@ -29,45 +29,43 @@ class App extends Component {
     this.setState({sunny:a});
 }
 winning = () =>{
-
-  
   this.setState({showScore:true});
   this.setState({score:0});
   this.setState({highscore:0})
-  
   this.componentDidMount();
   let audio = new Audio(winning)
     audio.play()
 }
-
+getImage =(char)=>{
+  switch(char){
+    case"dennis":
+      return require("./assets/images/dennis.jpg")
+      break;
+  }
+}
 componentDidMount = ()=>{
   this.shuffle(this.state.sunny);
   console.log("used");
 }
 
 componentDidUpdate = () => {
-  console.log(this.state.sunny);
-  // console.log(sunny);
-  // if(this.state.highscore === 14 && this.state.showScore === true){
-  //   this.buttonShow();
-  // }
+  
+  if(this.state.score === 14 && this.state.showScore === true){
+
+    this.buttonShow();
+  }
 }
+
 buttonShow = ()=>{
   console.log("test");
   this.setState({showScore:false});
 }
 handleCorrectGuess(sunny){
   this.setState({score:this.state.score +1})
-  if(this.state.highscore === 14 && this.state.showScore === true){
-    this.buttonShow();
-  }else{
+  
   this.shuffle(sunny)
-  }
+  
 }
-// endGame(sunny){
-//   console.log(sunny);
-//   console.log(this.state.sunny)
-// }
 handleIncorrectGuess(){
   if(this.state.highscore< this.state.score){
     this.setState({highscore:this.state.score});
@@ -112,7 +110,7 @@ handleItemClick = id => {
             id={sunny.id}
             key={sunny.id}
             name={sunny.name}
-            image={sunny.image}
+            image={this.getImage(sunny.name)}
             click ={this.handleItemClick}
           />
         ))}
